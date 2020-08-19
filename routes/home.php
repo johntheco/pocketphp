@@ -11,8 +11,4 @@ $router->get('/', function($req,$res){
 	));
 });
 
-$router->get('/hash', function($req,$res){
-	return password_hash('stanlee', PASSWORD_BCRYPT);
-});
-
 ?>

@@ -357,6 +357,9 @@ class Router {
                 } else if(substr($path, strlen($path) - 3) === '.7z'){
                     header('Content-Type: application/x-7z-compressed');
                     readfile($path);
+                }  else if(substr($path, strlen($path) - 5) === '.wsdl'){
+                    header('Content-Type: application/wsdl+xml');
+                    readfile($path);
                 }  else {
                     readfile($path);
                 }

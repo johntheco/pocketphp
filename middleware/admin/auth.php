@@ -1,8 +1,10 @@
 <?php
 
 session_start();
+session_regenerate_id();
 
 function AdminAuthMiddleware($successRoute=NULL){
+
     if(isset($_COOKIE['ID']) &&
        isset($_COOKIE['HASH']) &&
        isset($_COOKIE['EMAIL'])){
@@ -14,7 +16,7 @@ function AdminAuthMiddleware($successRoute=NULL){
     
         $SESSION_ID = $_SESSION[$EMAIL]['ID'];
         $SESSION_HASH = $_SESSION[$EMAIL]['HASH'];
-    
+
         if($ID != $SESSION_ID || $HASH != $SESSION_HASH){
             require(ROOT . '/controllers/admin/logout.php');
         } else {

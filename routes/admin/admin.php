@@ -64,9 +64,7 @@ $router->get('/admin/login', function($req,$res){
 });
 
 $router->post('/admin/login', function($req,$res){
-
     AdminAuthMiddleware();
-
     require(ROOT . '/controllers/admin/login.php');
 });
 
