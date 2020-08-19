@@ -1,19 +1,5 @@
 <?php
 
-if(count($_COOKIE) > 0)
-{
-    $counter = 1;
-    foreach($_COOKIE as $cookie)
-    {
-        echo "{$counter}. {$cookie}<br>";
-        $counter = $counter + 1;
-    }
-}
-else
-{
-    // echo "<p>No cookies</p>";
-}
-
 /**
  * Trying to implement Aura\Auth package.
  * But will try to make it from scratch.

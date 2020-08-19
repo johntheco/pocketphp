@@ -53,6 +53,19 @@ $login_query = function($connection, $data){
 
         $hash = $result->fetch_assoc()['user_pass'];
         if(password_verify($data['password'], $hash)){
+
+            session_start();
+
+            // Setting admin sessions
+            $ID = random_int(10000, 99999);
+            $HASH = crypt($data['email'], time());
+            $_SESSION[$data['email']]['ID'] = $ID;
+            $_SESSION[$data['email']]['HASH'] = $HASH;
+
+            // Setting admin cookies for one day
+            setcookie('ID', $ID, time()+24*3600);
+            setcookie('HASH', $HASH, time()+24*3600);
+            setcookie('EMAIL', $data['email'], time()+24*3600);
             // Creating sessions
             // Creating cookies
 

@@ -1,21 +1,33 @@
 <?php
 
+// Requiring middleware for administration routes.
+require(ROOT . '/middleware/admin/auth.php');
+
+
+/** ===== Root Page Routes ===== **/
+/** ============================ **/
+
 $router->get('/admin', function($req,$res){
 
-    // MIDDLEWARE :: Check if user has admin authentication token
-    //               If he doesn't -> redirect to login page.
-    //               Else -> redirect to dashboard.
+    // Check if user has all cookies required...
+    // If he is - then we'll redirect him to
+    // the `success route` - /admin/dashboard.
+    // 
+    // In other way - he'll be redirected to
+    // the login page by middleware itself.
+    AdminAuthMiddleware('/admin/dashboard');
 
-    $admintoken = False;
-
-    if($admintoken){
-        header('Location: /admin/dashboard');
-    } else {
-        header('Location: /admin/login');
-    }
 });
 
+
+
+/** ===== Dashboard Page Routes ===== **/
+/** ================================= **/
+
 $router->get('/admin/dashboard', function($req,$res){
+
+    AdminAuthMiddleware();
+
     $res->render('admin/dashboard', array(
         'title' => 'PocketPHP :: Administration Panel',
         'css' => array(
@@ -71,4 +83,13 @@ $router->get('/admin/register', function($req,$res){
 
 $router->post('/admin/register', function($req,$res){
     header('Location: /admin');
+});
+
+
+
+/** ===== Admin Logout Routes ===== **/
+/** =============================== **/
+
+$router->get('/admin/logout', function($req,$res){
+    require(ROOT . '/controllers/admin/logout.php');
 });
