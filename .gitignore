@@ -8,10 +8,3 @@ yarn-error.log
 
 # Predefined images
 public/assets/images/*
-
-# Future Features
-middleware/*
-routes/auth.php
-views/signin.php
-views/signup.php
-views/partials/auth-module.php
