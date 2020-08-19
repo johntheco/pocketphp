@@ -34,10 +34,10 @@ define("ASSETS", "public");
 /** ===== MySQL Database Variables ===== **/
 /** ==================================== **/
 
-define("HOST",        "");
-define("DATABASE",    "");
-define("USERNAME",    "");
-define("PASSWORD",    "");
+define("HOST",        "localhost");
+define("DATABASE",    "pocketphp");
+define("USERNAME",    "root");
+define("PASSWORD",    "root");
 
 
 

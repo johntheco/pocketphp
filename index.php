@@ -6,6 +6,11 @@
  * route map by requiring configuration (config/config.php)
  * and routing (routes/index.php) scripts.
  * 
+ * @todo Redo all dependency injections for `config` and
+ * `routes` to the new `Aura/Di` architecture, like in
+ * `auth.php` file.
+ * 
+ * 
  * 
  * @package PocketPHP
  * @version 0.0.1
@@ -19,5 +24,6 @@
 
 require_once('server/config.php');
 require_once('server/routes.php');
+require_once('server/auth.php');
 
 ?>
