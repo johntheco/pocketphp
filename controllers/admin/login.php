@@ -29,14 +29,19 @@ $data['password'] = $password;
 $login_query = function($connection, $data){
 
     // Making query to MySQL databases to catch our admin emails...
-    $query = "SELECT user_pass FROM users WHERE user_email = '{$data['email']}'";
+    $query = "SELECT users.user_pass FROM users
+        INNER JOIN usermeta ON users.ID = usermeta.user_id AND
+                               usermeta.meta_key = 'role' AND
+                               usermeta.meta_value = 'admin'
+        WHERE user_email = '{$data['email']}'";
     $result = mysqli_query($connection, $query);
 
     // If we didn't find anyone with that email,
     // redirecting to the /admin/login page with
     // error..
     if(!$result->num_rows){
-        // header('Location: /admin/login');
+        // Set cookies with warning
+        header('Location: /admin/login');
     } else {
         // Grabbing only first thing. I don't really know how
         // to handle error, where you can get to identical

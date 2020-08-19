@@ -47,6 +47,9 @@ $router->get('/admin/dashboard', function($req,$res){
 /** ======================== **/
 
 $router->get('/admin/login', function($req,$res){
+
+    AdminAuthMiddleware('/admin/dashboard');
+
     $res->render('admin/login', array(
         'title' => 'PocketPHP :: Login',
         'css' => array(
@@ -61,6 +64,9 @@ $router->get('/admin/login', function($req,$res){
 });
 
 $router->post('/admin/login', function($req,$res){
+
+    AdminAuthMiddleware();
+
     require(ROOT . '/controllers/admin/login.php');
 });
 
@@ -77,12 +83,11 @@ $router->get('/admin/register', function($req,$res){
     // 
     // Still there's useful code for login page,
     // so I'll keep it.
-
-    header('Location: /admin');
+    AdminAuthMiddleware();
 });
 
 $router->post('/admin/register', function($req,$res){
-    header('Location: /admin');
+    AdminAuthMiddleware();
 });
 
 
@@ -91,5 +96,6 @@ $router->post('/admin/register', function($req,$res){
 /** =============================== **/
 
 $router->get('/admin/logout', function($req,$res){
+    AdminAuthMiddleware();
     require(ROOT . '/controllers/admin/logout.php');
 });

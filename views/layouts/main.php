@@ -24,6 +24,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
+    <!-- This thingy prevens XSS and data injections -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';">
+
     <!-- Additional Meta Tags -->
     <meta name="author" content="">
     <meta name="description" content="">
