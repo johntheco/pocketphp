@@ -69,11 +69,13 @@ $login_query = function($connection, $data){
             $HASH = crypt($data['email'], time());
             $_SESSION[$data['email']]['ID'] = $ID;
             $_SESSION[$data['email']]['HASH'] = $HASH;
+            $_SESSION[$data['email']]['ROLE'] = 'admin';
 
             // Setting admin cookies for one day
             SetSecureCookie('ID', $ID, time()+24*3600);
             SetSecureCookie('HASH', $HASH, time()+24*3600);
             SetSecureCookie('EMAIL', $data['email'], time()+24*3600);
+            SetSecureCookie('ROLE', 'admin', time()+24*3600);
 
             header('Location: /admin/dashboard');
         } else {

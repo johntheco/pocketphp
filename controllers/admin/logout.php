@@ -13,6 +13,7 @@ if(isset($_COOKIE['ID']) &&
     // We need to get rid of these sessions
     $_SESSION[$_COOKIE['EMAIL']]['ID'] = NULL;
     $_SESSION[$_COOKIE['EMAIL']]['HASH'] = NULL;
+    $_SESSION[$_COOKIE['EMAIL']]['ROLE'] = NULL;
 
     // Or just...
     session_destroy();
@@ -21,6 +22,7 @@ if(isset($_COOKIE['ID']) &&
     SetSecureCookie('ID', null, -1);
     SetSecureCookie('HASH', null, -1);
     SetSecureCookie('EMAIL', null, -1);
+    SetSecureCookie('ROLE', null, -1);
     
     // And redirect him to the admin login page...
     header('Location: /admin');
