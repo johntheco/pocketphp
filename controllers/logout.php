@@ -2,7 +2,7 @@
 
 require_once(ROOT . '/controllers/setsecurecookie.php');
 
-// If admin has some cookies on him...
+// If user has come cookies on him...
 if(isset($_COOKIE['ID']) ||
    isset($_COOKIE['HASH']) ||
    isset($_COOKIE['EMAIL'])){
@@ -23,8 +23,9 @@ if(isset($_COOKIE['ID']) ||
     SetSecureCookie('HASH', null, -1);
     SetSecureCookie('EMAIL', null, -1);
     SetSecureCookie('ROLE', null, -1);
-    
-    // And redirect him to the admin login page...
-    header('Location: /admin');
+
+    // And redirect him to the home page...
+    header('Location: /home');
 }
+
 ?>

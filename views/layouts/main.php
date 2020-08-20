@@ -1,18 +1,3 @@
-<?php
-
-/**
- * Trying to implement Aura\Auth package.
- * But will try to make it from scratch.
- * =====================================
- * 
- * $auth_factory = NULL;
- * $auth_factory = new Aura\Auth\AuthFactory($_COOKIE);
- * $auth = $auth_factory->newInstance();
- * 
- */
-
-?>
-
 <!DOCTYPE html>
 <html lang="<?php require_once(ROOT . '/views/partials/lang-detector.php'); ?>">
 
@@ -22,6 +7,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Standard Meta Viewport
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- Bootstrap-style Meta Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <!-- This thingy prevens XSS and data injections -->
