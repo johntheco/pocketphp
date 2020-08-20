@@ -41,21 +41,9 @@
     </div>
 </nav>
 
-
-
-<!-- Main Content -->
 <main role="main" class="container main-container">
     <div class="jumbotron">
-        <h1>PocketPHP</h1>
-        <p class="lead">PocketPHP is extremely minimalistic
-        micro-boilerplate for building simple PHP websites
-        and applications with support of basic functionality
-        such as routing, templating, error Handling, static
-        files and regexp routes handling. PocketPHP is in
-        early stage of development and mainly suitable for
-        educational purposes, such as learning about basic
-        mechanisms of server applications, MVC design pattern,
-        or PHP programming language.</p>
-        <a class="btn btn-lg btn-primary" href="https://github.com/johntheco/pocketphp" role="button" target="_blank">Try it!</a>
+        <h1>User Profile</h1>
+        <p>Here will be profile information.</p>
     </div>
 </main>

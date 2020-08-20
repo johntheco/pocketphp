@@ -18,7 +18,7 @@ $router->get('/', function($req,$res){
 		'adminauth' => $adminauth,
 		'css' => array(
 			'assets/css/bootstrap.min.css',
-			// 'assets/css/home.css',
+			'assets/css/home.css',
 		),
 		'js' => array(
 			'assets/js/jquery-3.5.0.min.js',
@@ -90,6 +90,34 @@ $router->post('/register', function($req,$res){
 
 $router->get('/logout', function($req,$res){
 	require_once(ROOT . '/controllers/logout.php');
+});
+
+
+
+/** ===== User Profile Routes ===== **/
+/** =============================== **/
+
+$router->get('/profile', function($req,$res){
+
+	$userauth = UserAuthMiddleware();
+
+	$res->render('profile', array(
+		'title' => 'Profile',
+		'userauth' => $userauth,
+		'adminauth' => $adminauth,
+		'css' => array(
+			'assets/css/bootstrap.min.css',
+			'assets/css/profile.css',
+		),
+		'js' => array(
+			'assets/js/jquery-3.5.0.min.js',
+			'assets/js/bootstrap.bundle.min.js',
+		)
+	));
+});
+
+$router->post('/profile', function($req,$res){
+	
 });
 
 ?>
