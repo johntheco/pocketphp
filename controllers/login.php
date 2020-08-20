@@ -59,7 +59,7 @@ $login_query = function($connection, $data){
             SetSecureCookie('ID', $ID, time()+24*3600);
             SetSecureCookie('HASH', $HASH, time()+24*3600);
             SetSecureCookie('EMAIL', $data['email'], time()+24*3600);
-            SetSecureCookie('ROLE', 'admin', time()+24*3600);
+            SetSecureCookie('ROLE', 'user', time()+24*3600);
 
             header('Location: /home');
         } else {

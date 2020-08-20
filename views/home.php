@@ -1,8 +1,14 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+<!-- Static Navigation Bar
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4"> -->
+<!-- Fixed Navigation Bar -->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark mb-4">
     <a class="navbar-brand" href="#">PocketPHP</a>
 
-
+    <!-- Collapser! It is relatively easy to implement this XD -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-control="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <!-- Need for spacing -->
         <div class="mr-auto"></div>

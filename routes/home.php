@@ -1,15 +1,16 @@
 <?php
 
+require_once(ROOT . '/middleware/auth.php');
+require_once(ROOT . '/middleware/admin/auth.php');
+
+
+
 /** ===== Home Page Routes ===== **/
 /** ============================ **/
 
 $router->get('/', function($req,$res){
 
-	require_once(ROOT . '/middleware/auth.php');
-	require_once(ROOT . '/middleware/admin/auth.php');
-
 	$userauth = UserAuthMiddleware();
-	$adminauth = AdminAuthMiddleware();
 
 	$res->render('home', array(
 		'title' => 'Home',
@@ -36,6 +37,9 @@ $router->get('/home', function($req,$res){
 /** ============================= **/
 
 $router->get('/login', function($req,$res){
+
+	$userauth = UserAuthMiddleware('/home');
+
 	$res->render('login', array(
 		'title' => 'Login',
 		'css' => array(
@@ -59,6 +63,9 @@ $router->post('/login', function($req,$res){
 /** ================================ **/
 
 $router->get('/register', function($req,$res){
+
+	$userauth = UserAuthMiddleware('/home');
+
 	$res->render('register', array(
 		'title' => 'Register',
 		'css' => array(
