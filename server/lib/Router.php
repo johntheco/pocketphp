@@ -132,6 +132,21 @@ class Router {
 
         if($dot > $slash){
             if(file_exists($path)){
+
+                // Experimenting with different MIME
+                // content type identifiers...
+                // 
+                // finfo based
+                // ===========
+                // $result = new finfo();
+                // header($result->file($path, FILEINFO_MIME_TYPE));                
+                // readfile($path);
+                // 
+                // mime_content_type based
+                // =======================
+                // header(mime_content_type($path));
+                // readfile($path);
+                
                 if(substr($path, strlen($path) - 4) === '.css'){
                     header('Content-Type: text/css');
                     readfile($path);

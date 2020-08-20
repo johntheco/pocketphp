@@ -120,4 +120,13 @@ $router->post('/profile', function($req,$res){
 	
 });
 
+
+
+/** ===== PHP Info ===== **/
+/** ==================== **/
+
+$router->get('/phpinfo', function($req,$res){
+	phpinfo();
+});
+
 ?>
