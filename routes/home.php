@@ -122,6 +122,17 @@ $router->post('/profile', function($req,$res){
 
 
 
+// strtotime, date('d.m.y.')
+$router->get('/phpinfo', function($req,$res){
+	phpinfo();
+});
+
+// print_r + pre - for arrays
+// var_dum
+// die() - for debuggin
+
+// echo '<pre>'; print_r(); echo '</pre>';die();
+
 /** ===== PHP Info ===== **/
 /** ==================== **/
 
