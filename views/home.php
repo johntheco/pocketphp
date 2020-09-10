@@ -1,6 +1,8 @@
 <!-- Navigation -->
+
 <!-- Static Navigation Bar
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4"> -->
+
 <!-- Fixed Navigation Bar -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark mb-4">
     <a class="navbar-brand" href="/">PocketPHP</a>
